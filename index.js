@@ -37,6 +37,9 @@ client.on('message', (message) => {
   if(message.content == '!핑') {
     return message.reply('pong');
   }
+  if(message.content == '!접두사') {
+    return message.reply('접두사: {name: !}');
+  }
 
   if(message.content == '!서버상태') {
     let embed = new Discord.RichEmbed()
@@ -98,6 +101,7 @@ client.on('message', (message) => {
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
       {name: '!서버상태', desc: '봇의 서버상태 표기'},
+      {name: '!접두사', desc: '봇의 접두사 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
