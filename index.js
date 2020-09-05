@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "";
+const token = process.argv.length == 2 ? process.env.token : "NzUxNDEwNTUyNDYyNTA4MTE0.X1IrnA.QXRHOKACZt98jmXbmWyQa-eCRb4";
 const moment = require("moment");
 require("moment-duration-format");
 const welcomeChannelName = "자유채팅";
