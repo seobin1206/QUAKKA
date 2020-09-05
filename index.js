@@ -38,7 +38,7 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
   if(message.content == '!접두사') {
-    return message.reply('접두사: {name: !}');
+    return message.reply({name: '접두사: !'});
   }
 
   if(message.content == '!서버상태') {
