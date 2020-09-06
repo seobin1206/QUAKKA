@@ -8,9 +8,9 @@ const byeChannelName = "자유채팅";
 const welcomeChannelComment = "어서오세요.";
 const byeChannelComment = "안녕히가세요.";
 
-client.on('ready', () => {
+client.on('ready', () => {         //봇 상태
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '!도움/! SeObEeN_c#7656' }, status: 'online' })
+  client.user.setPresence({ game: { name: '!도움' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -43,16 +43,16 @@ client.on('message', (message) => {
 
   if(message.content == '!서버상태') {
     let embed = new Discord.RichEmbed()
-    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
+    let img = 'https://vignette.wikia.nocookie.net/creatures-of-the-world/images/9/9f/Quokka-4-650x425.jpg/revision/latest/scale-to-width-down/340?cb=20200204125940';
     var duration = moment.duration(client.uptime).format(" D [일], H [시간], m [분], s [초]");
     embed.setColor('#186de6')
     embed.setAuthor('QUAKKA봇 서버 상태', img)
     embed.setFooter(`QUAKKA봇`)
     embed.addBlankField()
     embed.addField('RAM usage',    `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true);
-    embed.addField('Running time', `${duration}`, true);
-    embed.addField('User',         `${client.users.size.toLocaleString()}`, true);
-    embed.addField('Server',       `${client.guilds.size.toLocaleString()}`, true);
+    embed.addField('running time', `${duration}`, true);
+    embed.addField('user',         `${client.users.size.toLocaleString()}`, true);
+    embed.addField('server',       `${client.guilds.size.toLocaleString()}`, true);
     HEAD
     // embed.addField('channel',      `${client.channels.size.toLocaleString()}`, true);
 
