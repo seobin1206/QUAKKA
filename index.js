@@ -53,7 +53,10 @@ client.on('message', (message) => {
     embed.addField('Running time', `${duration}`, true);
     embed.addField('User',         `${client.users.size.toLocaleString()}`, true);
     embed.addField('Server',       `${client.guilds.size.toLocaleString()}`, true);
+    HEAD
     // embed.addField('channel',      `${client.channels.size.toLocaleString()}`, true);
+
+    // embed.addField('Channel',      `${client.channels.size.toLocaleString()}`, true);
     embed.addField('Discord.js',   `v${Discord.version}`, true);
     embed.addField('Node',         `${process.version}`, true);
     
