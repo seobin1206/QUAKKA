@@ -250,36 +250,3 @@ async function AutoMsgDelete(message, str, delay = 3000) {
 
 
 client.login(token);
-
-
-
-
-
-
-
-
-
-
-
-let verify = "cLaN MeMbEr" // 인증 역할 아이디
-if(message.content.startsWith("!인증")) {
-   if(message.member.roles.find(x => x.id === verify)) {
-     message.member.addRole(verify)
-    .then(user => {
-      let embed = new Discord.RichEmbed()
-      embed.setTitle("인증 완료")
-      embed.setDescription(`> \`\`\`인증받으신분: ${user.displayName}#${user.discriminator}\`\`\`\n\`\`\`지급 된 역할: ${message.guild.roles.find(x => x.id === verify).name}`)
-      embed.setFooter(`${user.displayName}님 인증이 완료되었어요.`)
-      embed.setTimestamp()
-      message.channel.send({ embed: embed })
-    }).catch(error => {
-      message.channel.send("역할을 지급하지 못하였습니다.")
-    })    
-  } else {
-      let embed = new Discord.RichEmbed()
-      embed.setDescription(`> \`\`\`${message.member.displayName}#${message.member.discriminator}님! 인증이 되어있네요.\`\`\``)
-      embed.setFooter(`${message.member.displayName}님 인증이 되어있어요.`)
-      embed.setTimestamp()
-      message.channel.send({ embed: embed })
-  }
-}
