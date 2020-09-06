@@ -38,6 +38,14 @@ client.on('message', (message) => {
     return message.reply('퐁!');
   }
 
+  if(message.content == '!접두사') {
+    return message.reply('접두사: !');
+  }
+
+  if(message.content == '!서포트서버') {
+    return message.reply('https://discord.gg/zKntXmD');
+  }
+
   if(message.content == '!서버상태') {
     let embed = new Discord.RichEmbed()
     let img = 'https://discordapp.com/channels/723741784928157827/723741784928157831/752079361925971990';
@@ -97,6 +105,9 @@ client.on('message', (message) => {
       {name: '!청소', desc: '텍스트 지움'},
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
+      {name: '!서버상태', desc: '서버상태 표기'},
+      {name: '!접두사', desc: '봇의 접두사 표기'},
+      {name: '!서포트서버', desc: '봇의 서포트 서버 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
