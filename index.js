@@ -8,7 +8,7 @@ const byeChannelName = "자유채팅";
 const welcomeChannelComment = "어서오세요.";
 const byeChannelComment = "안녕히가세요.";
 
-client.on('ready', () => {         //봇 상태
+client.on('ready', () => {
   console.log('켰다.');
   client.user.setPresence({ game: { name: '!도움' }, status: 'online' })
 });
@@ -35,28 +35,22 @@ client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == '!핑') {
-    return message.reply('pong');
-  }
-  if(message.content == '!접두사') {
-    return message.reply('봇의 접두사는 "!" 입니다');
+    return message.reply('퐁!');
   }
 
   if(message.content == '!서버상태') {
     let embed = new Discord.RichEmbed()
-    let img = 'https://vignette.wikia.nocookie.net/creatures-of-the-world/images/9/9f/Quokka-4-650x425.jpg/revision/latest/scale-to-width-down/340?cb=20200204125940';
+    let img = 'https://discordapp.com/channels/723741784928157827/723741784928157831/752079361925971990';
     var duration = moment.duration(client.uptime).format(" D [일], H [시간], m [분], s [초]");
     embed.setColor('#186de6')
-    embed.setAuthor('QUAKKA봇 서버 상태', img)
+    embed.setAuthor('QUAKKA봇 서버상태', img)
     embed.setFooter(`QUAKKA봇`)
     embed.addBlankField()
     embed.addField('RAM usage',    `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true);
     embed.addField('running time', `${duration}`, true);
     embed.addField('user',         `${client.users.size.toLocaleString()}`, true);
     embed.addField('server',       `${client.guilds.size.toLocaleString()}`, true);
-    HEAD
     // embed.addField('channel',      `${client.channels.size.toLocaleString()}`, true);
-
-    // embed.addField('Channel',      `${client.channels.size.toLocaleString()}`, true);
     embed.addField('Discord.js',   `v${Discord.version}`, true);
     embed.addField('Node',         `${process.version}`, true);
     
@@ -75,7 +69,7 @@ client.on('message', (message) => {
     message.channel.send(embed);
   }
 
-  if(message.content == 'shlhwlhrlhqlkhwklrhlkqwr') {
+  if(message.content == 'embesssfaghhhhhhewfffdshsdhd') {
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
@@ -96,15 +90,13 @@ client.on('message', (message) => {
   } else if(message.content == '!도움') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
-      {name: '!도움', desc: '도움 명령어'},
-      {name: '!핑', desc: '현재 핑 상태(구현되지 않았습니다. 곧 개발 예정입니다)'},
-      {name: '!전체공지', desc: 'DM으로 전체 공지 보내기'},
-      {name: '!전체공지2', desc: 'DM으로 전체 Embed 형식으로 공지 보내기'},
+      {name: '!도움', desc: 'QUAKKA봇 도움말'},
+      {name: '!핑', desc: '현재 핑 상태'},
+      {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
+      {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
       {name: '!청소', desc: '텍스트 지움'},
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
-      {name: '!서버상태', desc: '봇의 서버상태 표기'},
-      {name: '!접두사', desc: '봇의 접두사 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
@@ -134,9 +126,9 @@ client.on('message', (message) => {
     });
   } else if(message.content == '!초대코드') {
     if(message.channel.type == 'dm') {
-      return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
+      return message.reply('Dm에서 사용할 수 없는 명령어 입니다.');
     }
-    message.guild.channels.get(message.channel.id).createInvite({maxAge: 0}) // maxAge: 0은 무한이라는 의미, maxAge부분을 지우면 24시간으로 설정됨
+    message.guild.channels.get(message.channel.id).createInvite // maxAge: 0은 무한이라는 의미, maxAge부분을 지우면 24시간으로 설정됨
       .then(invite => {
         message.channel.send(invite.url)
       })
@@ -189,8 +181,8 @@ client.on('message', (message) => {
     var clearLine = message.content.slice('!청소 '.length);
     var isNum = !isNaN(clearLine)
 
-    if(isNum && (clearLine <= 0 || 110 < clearLine)) {
-      message.channel.send("1부터 110까지의 숫자만 입력해주세요.")
+    if(isNum && (clearLine <= 0 || 100 < clearLine)) {
+      message.channel.send("1부터 100까지의 숫자만 입력해주세요.")
       return;
     } else if(!isNum) { // c @나긋해 3
       if(message.content.split('<@').length == 2) {
@@ -213,7 +205,7 @@ client.on('message', (message) => {
     } else {
       message.channel.bulkDelete(parseInt(clearLine)+1)
         .then(() => {
-          AutoMsgDelete(message, `<@${message.author.id}> ` + parseInt(clearLine) + "개의 메시지를 삭제했습니다.");
+          AutoMsgDelete(message, `<@${message.author.id}> ` + parseInt(clearLine) + "개의 메시지를 삭제했습니다. (이 메세지는 잠시 후에 사라집니다.)");
         })
         .catch(console.error)
     }
