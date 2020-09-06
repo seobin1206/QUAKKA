@@ -277,8 +277,4 @@ if(message.content.startsWith("!투표")) {
   })}
 
 
-
-
-
-
 client.login(token);
