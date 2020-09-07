@@ -35,7 +35,7 @@ client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == '!핑') {
-    return message.reply('퐁!');
+    return message.reply('퐁 {0}초.format(bot.latency');
   }
 
   if(message.content == '!접두사') {
@@ -251,26 +251,5 @@ async function AutoMsgDelete(message, str, delay = 3000) {
   }, delay);
 }
 
-client.on("message", async message => {
-  if(message.author.bot) return;
 
-  if(message.content.startswith('!뽑기')) {
-    message.channel.send("추첨중...")
-    var te = message.content.substring(4)
-    var text2 = message.content.split(' ');
-    var rper = Math.floor(Math.random()*2);
-    
-    if (te <4) {
-      message.channel.send("!뽑기 (변수) (변수) 로 입력해주세요!")
-      return;
-    }
-if (rper == 0) {
-  message.channel.send("추첨 결과는 "+text2[1]+"입니다.")
-}
-
-if (rper == 1) {
-  message.channel.send("추첨 결과는 "+text2[2]+"입니다.")
-}
-  }
-})
 client.login(token);
