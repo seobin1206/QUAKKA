@@ -13,6 +13,15 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: '!도움' }, status: 'online' })
 });
 
+client.on('message', (message) => {
+  if(message.channel.type == 'dm') return
+  if(!message.content.startsWith(config.prefix)) return
+ 
+  if(message.content.startsWith(config.prefix + '!핑')) {
+    message.channel.send(client.ping + ' ms')
+  }
+})
+
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
   const newUser = member.user;
@@ -33,10 +42,6 @@ client.on("guildMemberRemove", (member) => {
 
 client.on('message', (message) => {
   if(message.author.bot) return;
-
-  if(message.content == '!핑') {
-    return message.reply('퐁 {0}초'.format(bot.latency));
-  }
 
   if(message.content == '!접두사') {
     return message.reply('접두사: !');
