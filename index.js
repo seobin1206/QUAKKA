@@ -23,7 +23,7 @@ client.on("message", async message => {
     var rper = Math.floor(Math.random()*2);
     
     if (te <4) {
-      message.channel.send("!사다리 (변수) (변수) 로 입력해주세요!")
+      message.channel.send("!뽑기 (변수) (변수) 로 입력해주세요!")
       return;
     }
 if (rper == 0) {
@@ -31,9 +31,9 @@ if (rper == 0) {
 }
 
 if (rper == 0) {
-  message.channel.send("추첨 결과는 "+text[2]+"입니다.")
+  message.channel.send("추첨 결과는 "+text2[2]+"입니다.")
 }
-}
+  }
 })
 
 client.on("guildMemberAdd", (member) => {
