@@ -13,14 +13,6 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: '!도움' }, status: 'online' })
 });
 
-client.on('message', (message) => {
-  if(message.channel.type == 'dm') return
-  if(!message.content.startsWith(config.prefix)) return
- 
-  if(message.content.startsWith(config.prefix + '!핑')) {
-    message.channel.send(client.ping + ' ms')
-  }
-})
 
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
@@ -49,6 +41,10 @@ client.on('message', (message) => {
 
   if(message.content == '!서포트서버') {
     return message.reply('https://discord.gg/zKntXmD');
+  }
+
+  if(message.content.startsWith(config.prefix + '!핑')) {
+    message.channel.send(client.ping + ' ms')
   }
 
   if(message.content == '!서버상태') {
