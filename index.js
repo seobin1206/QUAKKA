@@ -35,7 +35,7 @@ client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == '!핑') {
-    return message.reply('퐁 {0}초.format(bot.latency');
+    return message.reply('퐁 {0}초'.format(bot.latency));
   }
 
   if(message.content == '!접두사') {
