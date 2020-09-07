@@ -43,7 +43,7 @@ client.on('message', (message) => {
     return message.reply('https://discord.gg/zKntXmD');
   }
 
-  if(message.content.startsWith(config.prefix + '!핑')) {
+  if(message.content == '!핑') {
     message.channel.send(client.ping + ' ms')
   }
 
