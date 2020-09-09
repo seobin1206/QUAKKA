@@ -45,7 +45,7 @@ client.on('message', (message) => {
 
   if(message.content == '!핑') {
     message.channel.send(':ping_pong: 퐁!')
-    embed.addField('Client ping: ' + client.ping + 'ms')
+    message.channel.send('Client ping: ' + client.ping + 'ms')
   }
 
   if(message.content == '!서버상태') {
