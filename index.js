@@ -44,7 +44,6 @@ client.on('message', (message) => {
   }
 
   if(message.content == '!핑') {
-    message.channel.send(':ping_pong: 퐁!')
     message.channel.send('Client ping: ' + client.ping + 'ms')
   }
 
