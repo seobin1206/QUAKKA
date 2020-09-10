@@ -1,5 +1,3 @@
-const Discord = require('discord.js');
-
 exports.run = async (client, message, args, tools) => {
     
     if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('이 명령어는 관리자 권한이 필요합니다.');
